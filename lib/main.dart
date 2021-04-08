@@ -1,14 +1,14 @@
-import 'package:banco_digital/screen/formulario_cadastro.dart';
+import 'package:banco_digital/screen/login.dart';
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(App()); //MaterialApp
+  runApp(App());
 }
 
-class App extends StatelessWidget{
+class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    
+
     return MaterialApp(
       theme: ThemeData(
         primaryColor: Colors.deepPurple[500],
@@ -18,7 +18,8 @@ class App extends StatelessWidget{
           textTheme: ButtonTextTheme.primary
         )
       ),
-      home: FormularioCadastro(),
+      home: Login(),
     );
   }
+
 }
