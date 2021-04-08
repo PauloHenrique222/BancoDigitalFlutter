@@ -1,4 +1,3 @@
-
 import 'package:banco_digital/components/editor.dart';
 import 'package:banco_digital/screen/formulario_cadastro.dart';
 import 'package:flutter/material.dart';
@@ -67,9 +66,9 @@ class Login extends StatelessWidget {
                           Navigator.pushAndRemoveUntil(
                             context,
                             MaterialPageRoute(builder: (context) {
-                              return Home();
+                              return Home(id);
                             }),
-                            ModalRoute.withName('lista_transferencia'),
+                            ModalRoute.withName('home'),
                           );
                         }
                       }

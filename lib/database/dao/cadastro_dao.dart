@@ -24,11 +24,23 @@ class CadastroDAO {
     return cadastroMap;
   }
 
-  Future<Cadastro> findCadastro() async {
+  Future<Cadastro> findCadastro(id) async {
 
     final Database db = await createDatabase();
     final List<Map<String, dynamic>> maps = await db.query("cadastros");
 
+    for(Map<String, dynamic> map in maps) {
+      if(map['id'] == id){
+        return Cadastro(
+            nome: map['nome'],
+            sobrenome: map['sobrenome'],
+            cpf: map['cpf'],
+            email: map['email'],
+            telefone: map['telefone'],
+            id: map['id']
+        );
+      }
+    }
     return Cadastro(
         nome: maps.first['nome'],
         sobrenome: maps.first['sobrenome'],

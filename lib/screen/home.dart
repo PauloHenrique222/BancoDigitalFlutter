@@ -8,14 +8,17 @@ import 'package:banco_digital/components/progress_circular.dart';
 
 class Home extends StatelessWidget {
 
+  final int id;
   final CadastroDAO _dao = CadastroDAO();
+
+  Home(this.id);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Theme.of(context).primaryColor,
       body: FutureBuilder <Cadastro> (
-        future: Future.delayed(Duration(seconds: 2)).then((value) => this._dao.findCadastro()),
+        future: Future.delayed(Duration(seconds: 2)).then((value) => this._dao.findCadastro(id)),
         builder: (context, snapshot) {
          Cadastro cadastro = snapshot.data;
           switch(snapshot.connectionState) {

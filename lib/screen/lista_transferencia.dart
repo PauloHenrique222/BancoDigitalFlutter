@@ -9,7 +9,6 @@ class ListaTransferencia extends StatefulWidget {
 
   @override
   State<StatefulWidget> createState() {
-
     return _ListaTransferenciaState();
   }
 }
@@ -62,6 +61,10 @@ class _ListaTransferenciaState extends State<ListaTransferencia> {
                 return FormularioTransferencia();
               })
           );
+          future.then((id){
+            setState(() {
+            });
+          });
         },
       ),
     );

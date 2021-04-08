@@ -49,9 +49,9 @@ class ConfirmarCadastro extends StatelessWidget {
                 Navigator.pushAndRemoveUntil(
                   context,
                   MaterialPageRoute(builder: (context) {
-                    return Home();
+                    return Home(id);
                   }),
-                  ModalRoute.withName('lista_transferencia'),
+                  ModalRoute.withName('home'),
                 );
               });
             },

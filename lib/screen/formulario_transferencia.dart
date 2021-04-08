@@ -4,8 +4,7 @@ import 'package:banco_digital/database/dao/transferencia_dao.dart';
 import 'package:banco_digital/modules/transferencia.dart';
 
 class FormularioTransferencia extends StatelessWidget {
-  final TextEditingController _controladorCampoNumeroConta =
-      TextEditingController();
+  final TextEditingController _controladorCampoNumeroConta = TextEditingController();
   final TextEditingController _controladorCampoValor = TextEditingController();
   final TextEditingController _controladorCampoNome = TextEditingController();
 
@@ -52,7 +51,6 @@ class FormularioTransferencia extends StatelessWidget {
 
                   this._dao.save(transferencia)
                     .then((id) => Navigator.pop(context, id));
-
                 },
                 child: Text("Confirmar"),
               ),

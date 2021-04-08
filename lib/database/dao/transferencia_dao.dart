@@ -33,14 +33,15 @@ class TransferenciaDAO {
     final List<Transferencia> transferencias = List();
 
     for(Map<String, dynamic> map in result) {
+
       var transferencia = Transferencia(
           nome: map['name'],
           conta: map['account_number'],
           valor: map['value'],
           id: map['id']
       );
-
       transferencias.add(transferencia);
+
     }
 
     return transferencias;
