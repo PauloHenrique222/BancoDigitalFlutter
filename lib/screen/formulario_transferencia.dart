@@ -1,14 +1,14 @@
+import 'package:banco_digital/screen/lista_transferencia.dart';
+import 'package:banco_digital/services/database_service.dart';
 import 'package:flutter/material.dart';
 import 'package:banco_digital/components/editor.dart';
-import 'package:banco_digital/database/dao/transferencia_dao.dart';
 import 'package:banco_digital/modules/transferencia.dart';
 
 class FormularioTransferencia extends StatelessWidget {
   final TextEditingController _controladorCampoNumeroConta = TextEditingController();
   final TextEditingController _controladorCampoValor = TextEditingController();
   final TextEditingController _controladorCampoNome = TextEditingController();
-
-  final TransferenciaDAO _dao = TransferenciaDAO();
+  DatabaseService database = DatabaseService();
 
   @override
   Widget build(BuildContext context) {
@@ -48,9 +48,8 @@ class FormularioTransferencia extends StatelessWidget {
                     conta: numeroConta,
                     nome: nome,
                   );
-
-                  this._dao.save(transferencia)
-                    .then((id) => Navigator.pop(context, id));
+                  database.createTransferencia(transferencia);
+                  Navigator.pop(context);
                 },
                 child: Text("Confirmar"),
               ),

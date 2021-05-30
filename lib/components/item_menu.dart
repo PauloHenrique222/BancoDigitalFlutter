@@ -25,7 +25,7 @@ class ItemMenu extends StatelessWidget {
         child: Container(
           padding: EdgeInsets.fromLTRB(0.0, 16.0, 0.0, 0.0),
           height: 80,
-          width: 187,
+          width: 120,
           color: Theme.of(context).accentColor,
           child: Column(
             children: <Widget>[

@@ -1,14 +1,12 @@
-import 'package:banco_digital/modules/cadastro.dart';
+import 'package:banco_digital/modules/dados_pessoais.dart';
+import 'package:banco_digital/modules/usuario.dart';
 import 'package:flutter/material.dart';
-import 'package:banco_digital/database/dao/cadastro_dao.dart';
 
 class Config extends StatelessWidget {
 
-  final Cadastro cadastro;
+  final DadosPessoais dadosPessoais;
 
-  Config(this.cadastro);
-
-  final CadastroDAO _dao = CadastroDAO();
+  Config(this.dadosPessoais);
 
   @override
   Widget build(BuildContext context) {
@@ -24,20 +22,9 @@ class Config extends StatelessWidget {
               child: ListView(
                   children:[
                     ListTile(
-                      leading: Icon(Icons.account_circle),
-                      title: Text("Nome: ${this.cadastro.nome} ${this.cadastro.sobrenome}"),
-                    ),
-                    ListTile(
-                      leading: Icon(Icons.payment),
-                      title: Text("CPF: ${this.cadastro.cpf}"),
-                    ),
-                    ListTile(
                       leading: Icon(Icons.mail),
-                      title: Text("Email: ${this.cadastro.email}"),
-                    ),
-                    ListTile(
-                      leading: Icon(Icons.phone),
-                      title: Text("Telefone: ${this.cadastro.telefone}"),
+                      title: Text("Nome: ${this.dadosPessoais.nome}"
+                          " ${this.dadosPessoais.sobrenome}"),
                     ),
                   ]
               ),

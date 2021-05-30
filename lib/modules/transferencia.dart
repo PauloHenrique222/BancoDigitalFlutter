@@ -2,13 +2,11 @@ class Transferencia {
   double valor;
   String conta;
   String nome;
-  int id;
-  int id_user;
 
-  Transferencia({this.valor, this.conta, this.nome, this.id, this.id_user});
+  Transferencia({this.valor, this.conta, this.nome});
 
   @override
   String toString() {
-    return 'Transferencia{id: $id, valor: $valor, conta: $conta, nome: $nome, id_user: $id_user}';
+    return 'Transferencia { valor: $valor, conta: $conta, nome: $nome }';
   }
 }
